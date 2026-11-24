@@ -13,13 +13,26 @@ function kiemTraDangKy() {
     const soThich = document.getElementById("txtSoThich").value.trim();
     const dongY = document.getElementById("chkDongYDieuKhoan").checked;
 
+
+    const soTien = document.getElementById("txtTien").value.trim();
+
+
     const thongBao = document.getElementById("loiDangKyClient");
 
     thongBao.textContent = "";
 
+
+
+    const mauSoTien = /^(1\d{2}|200)$/;
+    if (!mauSoTien.test(soTien)) {
+        return hienLoi("Số tiền phải là số từ 100 đến 200.");
+    }
+
+
+
     // Kiem tra thong tin bat buoc
     if (!hoTen || !tenDangNhap || !matKhau ||
-        !email || !queQuan || !soThich) {
+        !email || !queQuan || !soThich || !soTien) {
         return hienLoi("Vui lòng nhập đầy đủ thông tin bắt buộc.");
     }
 
@@ -94,3 +107,4 @@ function doiHienThiMatKhau(id) {
         oMatKhau.type = "password";
     }
 }
+//Chỉ có số: số có giới hạn trên dưới // chỉ có

@@ -32,6 +32,9 @@ namespace WebsiteThiTracNghiem2
 
             // Trang thai dong y dieu khoan
             public bool DongYDieuKhoan { get; set; }
+            public string Tien { get; set; }
+            public string Beta { get; set; }
+            public string QueQuan2 { get; set; }
         }
 
         // 2. Doc thong tin tai khoan theo ten dang nhap
@@ -51,7 +54,7 @@ namespace WebsiteThiTracNghiem2
 
                     string[] cot = dong.Split('|');
 
-                    if (cot.Length != 9)
+                    if (cot.Length != 11)
                         continue;
 
                     if (string.Equals(
@@ -67,7 +70,10 @@ namespace WebsiteThiTracNghiem2
                             Lop = cot[4],
                             QueQuan = cot[5],
                             SoThich = cot[6],
-                            DongYDieuKhoan = cot[7] == "True"
+                            DongYDieuKhoan = cot[7] == "True",
+                            Tien = cot[8],
+                            Beta = cot[9],
+                            QueQuan2 = cot[10],
                         };
                     }
                 }
@@ -139,7 +145,7 @@ namespace WebsiteThiTracNghiem2
                 {
                     string[] cot = danhSach[i].Split('|');
 
-                    if (cot.Length != 9)
+                    if (cot.Length != 11)
                         continue;
 
                     if (string.Equals(
@@ -301,7 +307,10 @@ namespace WebsiteThiTracNghiem2
                     taiKhoan.QueQuan,               // Cot 6: Que quan
                     taiKhoan.SoThich,               // Cot 7: So thich
                     taiKhoan.DongYDieuKhoan.ToString(), // Cot 8: Dong y dieu khoan
-                    quyen                           // Cot 9: Quyen tai khoan
+                    quyen      ,                     // Cot 10: Quyen tai khoan
+                                        taiKhoan.Tien  ,      // Cot 9: Tien
+                                        taiKhoan.Beta,   // Cot 10: Beta
+                                        taiKhoan.QueQuan2 // Cot 11: Que quan 2
                 });
 
                 // Ghi them tai khoan moi vao cuoi file TaiKhoan.txt

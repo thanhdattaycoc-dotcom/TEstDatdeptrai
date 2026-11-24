@@ -22,10 +22,39 @@ namespace WebsiteThiTracNghiem2
             public string Email { get; set; }
             public string Lop { get; set; }
             public string Quyen { get; set; }
+            public string Tien { get; set; }
 
             // Lưu nguyên 9 trường để không làm mất dữ liệu tài khoản.
             public string DongDuLieu { get; set; }
+            public string Beta { get; set; }
+            public string QueQuan2 { get; set; }
+
         }
+
+
+        //private string LayTenQueQuan(string maQueQuan)
+        //{
+        //    string filePath = Server.MapPath("~/App-Data/QueQuan.txt");
+
+        //    if (!File.Exists(filePath))
+        //        return maQueQuan;
+
+        //    foreach (string line in File.ReadAllLines(filePath, System.Text.Encoding.UTF8))
+        //    {
+        //        if (string.IsNullOrWhiteSpace(line))
+        //            continue;
+
+        //        string[] parts = line.Split('|');
+
+        //        if (parts.Length >= 2 &&
+        //            parts[0].Trim() == maQueQuan.Trim())
+        //        {
+        //            return parts[1].Trim();
+        //        }
+        //    }
+
+        //    return maQueQuan;
+        //}
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,8 +88,8 @@ namespace WebsiteThiTracNghiem2
             {
                 string[] p = dong.Split('|');
 
-                if (p.Length != 9)
-                    continue;
+
+                if (p.Length < 9 || p.Length > 12) continue;
 
                 ds.Add(new TaiKhoan
                 {
@@ -69,7 +98,10 @@ namespace WebsiteThiTracNghiem2
                     Email = p[3],
                     Lop = p[4],
                     Quyen = p[8],
-                    DongDuLieu = dong
+                    DongDuLieu = dong,
+                    Tien = p.Length >= 10 ? p[9] : "",
+                    Beta = p.Length == 11 ? p[10] : "",
+                    QueQuan2 = p.Length > 11 ? p[11] : ""
                 });
             }
 
@@ -169,7 +201,7 @@ namespace WebsiteThiTracNghiem2
 
                 string[] p = tk.DongDuLieu.Split('|');
 
-                if (p.Length != 9)
+                if (p.Length <= 8)
                     return;
 
                 p[8] = quyenMoi;

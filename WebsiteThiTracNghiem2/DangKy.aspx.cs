@@ -1,6 +1,11 @@
 ﻿
 using System;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
+using System.Web.UI.WebControls;
 
 namespace WebsiteThiTracNghiem2
 {
@@ -8,6 +13,10 @@ namespace WebsiteThiTracNghiem2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                LoadQueQuan();
+            }
         }
 
         protected void btnDangKy_Click(object sender, EventArgs e)
@@ -24,6 +33,9 @@ namespace WebsiteThiTracNghiem2
             string lop = txtLop.Text.Trim();
             string queQuan = ddlQueQuan.SelectedValue;
             string soThich = txtSoThich.Text.Trim();
+            string tien = txtTien.Text.Trim();
+            string beta = txtBeta.Text.Trim();
+            string queQuan2 = ddlQueQuan2.SelectedValue;
 
             // 2. Kiem tra thong tin bat buoc
             if (string.IsNullOrWhiteSpace(hoTen) ||
@@ -31,7 +43,8 @@ namespace WebsiteThiTracNghiem2
                 string.IsNullOrWhiteSpace(matKhau) ||
                 string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(queQuan) ||
-                string.IsNullOrWhiteSpace(soThich))
+                string.IsNullOrWhiteSpace(soThich) ||
+                string.IsNullOrWhiteSpace(tien))
             {
                 HienThongBao("Vui lòng nhập đầy đủ thông tin bắt buộc.", false);
                 return;
@@ -90,8 +103,11 @@ namespace WebsiteThiTracNghiem2
               Lop = lop,
               QueQuan = queQuan,
               SoThich = soThich,
-              DongYDieuKhoan = true
-              };
+              Tien = tien,
+              Beta = beta,
+              DongYDieuKhoan = true,
+              QueQuan2= queQuan2
+             };
 
             // 8. Goi lop XuLyTaiKhoan de dang ky
             try
@@ -138,5 +154,57 @@ namespace WebsiteThiTracNghiem2
                 ? "server-message success"
                 : "server-message error";
         }
+
+        private void LoadQueQuan()
+        {
+            string filePath = Server.MapPath("~/App-Data/QueQuan.txt");
+
+            ddlQueQuan2.Items.Clear();
+
+            ddlQueQuan2.Items.Add(
+                new ListItem("-- Chọn quê quán --", "")
+            );
+
+            if (File.Exists(filePath))
+            {
+                foreach (string line in File.ReadAllLines(filePath, Encoding.UTF8))
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    string tenQueQuan = line.Trim();
+
+                    ddlQueQuan2.Items.Add(
+                        new ListItem(tenQueQuan, tenQueQuan)
+                    );
+                }
+            }
+        }
+        // dưới này dùng để khi lưu que quans co luu maquequan kieu 01|Hà nội
+        //private void LoadQueQuan() 
+        //{
+        //    string filePath = Server.MapPath("~/App-Data/QueQuan.txt");
+
+        //    ddlQueQuan2.Items.Clear();
+        //    ddlQueQuan2.Items.Add(new ListItem("-- Chọn quê quán --", ""));
+
+        //    // Dòng test để biết hàm LoadQueQuan có chạy và đổ vào ddlQueQuan được không
+        //    ddlQueQuan2.Items.Add(new ListItem("TEST_OK", "999"));
+
+        //    if (File.Exists(filePath))
+        //    {
+        //        foreach (string line in File.ReadAllLines(filePath, Encoding.UTF8))
+        //        {
+        //            if (string.IsNullOrWhiteSpace(line)) continue;
+
+        //            string[] parts = line.Split('|');
+        //            if (parts.Length >= 2)
+        //            {
+        //                ddlQueQuan2.Items.Add(new ListItem(parts[1].Trim(), parts[0].Trim()));
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
+

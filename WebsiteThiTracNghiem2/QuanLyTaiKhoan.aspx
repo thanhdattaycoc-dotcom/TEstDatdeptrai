@@ -107,8 +107,18 @@
                 EmptyDataText="Không tìm thấy tài khoản.">
 
                 <Columns>
+
+
                     <asp:BoundField DataField="HoTen"
                         HeaderText="Họ tên" />
+                    <asp:BoundField DataField="Tien"
+                        HeaderText="Số Tiền" /> 
+                    <asp:BoundField DataField="Beta"
+                        HeaderText="Số Beta"/> 
+                    <asp:BoundField
+    DataField="QueQuan2"
+    HeaderText="Quê quán 2" />
+
 
                     <asp:BoundField DataField="TenDangNhap"
                         HeaderText="Tên đăng nhập" />

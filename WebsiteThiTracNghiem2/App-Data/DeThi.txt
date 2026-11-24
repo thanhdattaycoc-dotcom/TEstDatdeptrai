@@ -1,6 +1,4 @@
-﻿
-MaDe|TenDe|MonHoc|ThoiGian|SoCau
-DT001|Kiểm tra giữa kỳ|Tin học|30|20
+DT001|Kiểm tra giữa kỳ|Tin học|30|4
 DT002|Ôn tập chương 1|Toán học|45|30
 DT003|Kiểm tra cuối kỳ|Tiếng Anh|60|40
 DT004|Kiến thức cơ bản|Cơ sở dữ liệu|30|20

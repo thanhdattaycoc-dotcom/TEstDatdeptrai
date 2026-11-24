@@ -24,6 +24,24 @@ namespace WebsiteThiTracNghiem2
         protected global::System.Web.UI.WebControls.TextBox txtHoTen;
 
         /// <summary>
+        /// txtTien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTien;
+
+        /// <summary>
+        /// txtBeta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBeta;
+
+        /// <summary>
         /// txtTenDangNhap control.
         /// </summary>
         /// <remarks>
@@ -76,6 +94,15 @@ namespace WebsiteThiTracNghiem2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlQueQuan;
+
+        /// <summary>
+        /// ddlQueQuan2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlQueQuan2;
 
         /// <summary>
         /// txtSoThich control.

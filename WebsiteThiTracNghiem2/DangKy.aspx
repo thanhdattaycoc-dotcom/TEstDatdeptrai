@@ -24,6 +24,23 @@
                         CssClass="form-control"
                         placeholder="Nhập họ và tên" />
                 </div>
+                <div class="form-group">
+                    <label>Số tiền *</label>
+                    <asp:TextBox ID="txtTien" runat="server"
+                        ClientIDMode="Static"
+                        TextMode="Number"
+                        CssClass="form-control"
+                        placeholder="Nhập số tiền" />
+                </div>
+
+                <div class="form-group">
+                    <label>Số beta</label>
+                    <asp:TextBox ID="txtBeta" runat="server"
+                        ClientIDMode="Static"
+                        TextMode="Number"
+                        CssClass="form-control"
+                        placeholder="Nhập so Beta" />
+                </div>
 
                 <div class="form-group">
                     <label>Tên đăng nhập *</label>
@@ -94,6 +111,23 @@
                         <asp:ListItem Text="Khác" Value="Khác" />
                     </asp:DropDownList>
                 </div>
+
+
+
+
+                <div class="form-group">
+            <label>Quê quán 2*</label>
+            <asp:DropDownList ID="ddlQueQuan2" runat="server"
+                ClientIDMode="Static"
+                CssClass="form-control">
+            </asp:DropDownList>
+        </div>
+
+
+
+
+
+
 
                 <div class="form-group">
                     <label>Sở thích *</label>

@@ -1,1 +1,7 @@
 Nguyen Van A|admin|123456|admin@gmail.com|CNTT|Hung Yen|Doc sach|true|Admin
+Pham Thanh Dat|dat|123456|dat@gmail.com|2410A07|Hà Nội|sex sexx|True|User
+thanhdat@gmail.com|addd|123456|addd@gmail.com|2410A07|Hải Phòng|sex sexx|True|User
+Pham Thanh Dat|adddada|123456|adddddd@gmail.com|2410A07|Hải Phòng|phong the doi truy|True|User|123
+K69|k69|123456|k69@gmail.com|2410A07|Hải Phòng|hoang dam vo do|True|User|123|155
+Hachimi|Hachimi|123456|Hachimi@gmail.com|2410A07|Hà Nội|sex sexx|True|User|123|123|Hà Nội
+K423|K423|123456|k423@gmail.com|2410A07|Hồ Chí Minh|sex sexx|True|User|142|123|Hà Nội

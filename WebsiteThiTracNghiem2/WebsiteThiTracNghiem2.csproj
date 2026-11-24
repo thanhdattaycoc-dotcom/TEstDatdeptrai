@@ -68,6 +68,7 @@
     <Content Include="App-Data\CauHoi.txt" />
     <Content Include="App-Data\DeThi.txt" />
     <Content Include="App-Data\KetQuaThi.txt" />
+    <Content Include="App-Data\QueQuan.txt" />
     <Content Include="App-Data\TaiKhoan.txt" />
     <Content Include="css\DangKy.css" />
     <Content Include="css\DangNhap.css" />

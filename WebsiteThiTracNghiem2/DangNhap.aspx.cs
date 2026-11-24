@@ -80,7 +80,7 @@ namespace WebsiteThiTracNghiem2
                     // Tach du lieu thanh 9 cot
                     string[] cot = dong.Split('|');
 
-                    if (cot.Length != 9)
+                    if (cot.Length <= 8)
                         continue;
 
                     string tenCu = cot[1];
